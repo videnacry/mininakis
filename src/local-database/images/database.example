@@ -1,0 +1,47 @@
+import catSrc from './cat.png'
+import defofunknfoSrc from "./defofunknfo.png"
+import diskSrc from "./disk.png"
+import eventSrc from "./event.png"
+import mininackSrc from "./mininack.png"
+import snakeSrc from "./snake.png"
+import yeahSrc from "./yeah.png"
+
+const images = [
+    {
+        name: "cat",
+        date: "",
+        src: catSrc
+    },
+    {
+        name: "defofunknfo",
+        date: "",
+        src: defofunknfoSrc
+    },
+    {
+        name: "disk",
+        date: "",
+        src: diskSrc
+    },
+    {
+        name: "event",
+        date: "",
+        src: eventSrc
+    },
+    {
+        name: "mininack",
+        date: "",
+        src: mininackSrc
+    },
+    {
+        name: "snake",
+        date: "",
+        src: snakeSrc
+    },
+    {
+        name: "yeah",
+        date: "",
+        src: yeahSrc
+    }
+]
+
+export default images
