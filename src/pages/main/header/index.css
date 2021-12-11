@@ -1,0 +1,52 @@
+.main_header-section {}
+.main_header-section > .head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.main_header-section > .head > .title {
+    font-size: 3.5em;
+    font-weight: 400;
+    color: white;
+}
+.main_header-section > .head > .bar {
+    width: 50%;
+    height: 2vmin;
+}
+.main_header-section > .menu, .main_header-section > .head > .bar {
+    background-color: #E4E4E4;
+    box-shadow: 0 0 0.5em black;
+}
+.main_header-section > .menu {
+    width: 80%;
+    height: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.main_header-section > .menu > .button {
+    margin-right: 0.8em;
+}
+.main_header-section > .menu > .button:first {
+    border-right: solid black 1px;
+}
+.main_header-section > .menu > .button > .icon {
+    width: 0.8em;
+    height: 0.8em;
+}
+.main_header-section > .menu > .button:hover > .icon {
+    transform: scale(1.6);
+}
+.main_header-section > .menu > .text {
+    margin-right: 2em;
+    font-size: 0.8em;
+    color: #343434
+}
+@media screen and (max-width: 400px) {
+    .main_header-section > .head > .bar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
+}

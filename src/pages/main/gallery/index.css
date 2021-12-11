@@ -1,0 +1,90 @@
+.main_gallery-section {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 1vmin;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.main_gallery-section > .images-column-unique {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.main_gallery-section > .images-column-third {
+    margin-right: 3vmin;
+}
+.main_gallery-section > .images-column-third:first-child {
+    margin-top: 10vmin;
+}
+.main_gallery-section > .images-column-third:nth-child(2) {
+    margin-top: 5vmin;
+}
+.main_gallery-section > .images-column-unique > .big-image > .frame {
+    margin-bottom: 10vmin;
+}
+.main_gallery-section > .images-column-third > .small-image > .frame {
+    margin-bottom: 5vmin;
+}
+.main_gallery-section > .images-column-unique > .big-image > .frame, .main_gallery-section > .images-column-third > .small-image > .frame {
+    padding-top: 100%;
+    position: relative;
+}
+.main_gallery-section > .images-column-unique > .big-image > .frame > .image, .main_gallery-section > .images-column-third > .small-image > .frame > .image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+}
+.main_gallery-section > .images-column-unique > .big-image {
+    width: 50vw;
+}
+.main_gallery-section > .images-column-third > .small-image {
+    width: 20vw;
+}
+.main_gallery-section::-webkit-scrollbar {
+    max-width: 1em;
+    width: 2vmin;
+    border-radius: 2px;
+    background-color: #E4E4E4;
+    box-shadow: 0 0 0.5em black;
+}
+.main_gallery-section::-webkit-scrollbar-thumb {
+    background-color: rgb(41, 41, 41);
+    box-shadow: inset 0 0 0.1em #E4E4E4;
+    position: absolute;
+    width: 3px;
+    border: solid 2px #E4E4E4;
+    border-top: solid 5px #E4E4E4;
+    border-bottom: solid 5px #E4E4E4;
+    border-radius: 2px;
+}
+@media screen and (max-width: 980px) {
+    .main_gallery-section {
+        width: 89%;
+        justify-content: flex-start;
+        right: unset;
+        left: 10%;
+    }
+    .main_gallery-section > .images-column-unique {
+        margin-right: 25%;
+    }
+}
+@media screen and (max-width: 810px) {
+    .main_gallery-section > .images-column-third {
+        margin-right: 1vw;
+    }
+    .main_gallery-section > .images-column-third:first-child {
+        margin-left: 2vmin;
+    }
+    .main_gallery-section > .images-column-third > .small-image {
+        width: 20vw;
+    }
+}

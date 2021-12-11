@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import {useEffect, useState} from 'react';
+import Gallery from './pages/main'
+import getConfig from './config';
+import ImageType from './models/images/imageType';
+
+import backgroundImageSrc from './5ant.jpg'
 import './App.css';
 
-function App() {
+function App () {
+  
+  const initialValue: ImageType[] = []
+  const [images, setImages] = useState(initialValue)
+  
+  //Load the photos
+  useEffect(() => {
+    const config = getConfig('dev')
+    setImagesAsync()
+    async function setImagesAsync () {
+      setImages(await config.Images.getAllImagesAsync())
+    }
+  }, [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <img className="background-image-left" src={backgroundImageSrc} alt="background"/>
+      <img className="background-image-right" src={backgroundImageSrc} alt="background"/>
+      <Gallery images={images}/>
+    </>
   );
 }
 

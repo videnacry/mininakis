@@ -1,0 +1,22 @@
+.main-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.main-page > .left-bar {
+    max-width: 1em;
+    width: 2vmin;
+    height: 88%;
+    margin: 1vmin;
+    background-color: #E4E4E4;
+    box-shadow: 0 0 0.5em black;
+}
+.main-page > .right-content {
+    width: 100%
+}
+.main-page > .right-content > .main {
+    height: calc(100% - 106px - 8vmin);
+    margin-top: 5vmin;
+    display: flex;
+    position: relative;
+}

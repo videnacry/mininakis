@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local database
+/src/local-database/images/*.jpg
+/src/local-database/images/*.png
+/src/local-database/images/database.ts
+/src/*.jpg
