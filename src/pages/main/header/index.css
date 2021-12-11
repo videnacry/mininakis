@@ -43,10 +43,34 @@
     font-size: 0.8em;
     color: #343434
 }
-@media screen and (max-width: 400px) {
+.main_header-section > .menu > .text:nth-child(2) {
+    margin-left: 2em;
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    .main_header-section > .menu {
+        margin-left: auto;
+        margin-right: -10px;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 1;
+    }
     .main_header-section > .head > .bar {
+        width: 2vmin;
+        height: 20vh;
         position: absolute;
-        top: 100%;
-        right: 0;
+        top: -10%;
+        right: 8%;
+    }
+    .main_header-section > .menu > .text:first-child {
+        display: none;
+    }
+    .main_header-section > .menu > .text:nth-child(2) {
+        display: block;
+    }
+}
+@media screen and (max-width: 500px) {
+    .main_header-section > .head > .bar {
+        right: 9%;
     }
 }

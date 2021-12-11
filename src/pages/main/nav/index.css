@@ -32,3 +32,27 @@
     font-weight: 600;
     color: #242424;
 }
+.main_nav-section > .button > .icon {
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    .main_nav-section {
+        position: absolute;
+        bottom: 60%;
+    }
+    .main_nav-section > .button {
+        margin: 2vmin 0;
+        z-index: 1;
+    }
+    .main_nav-section > .button > .text {
+        display: none;
+    }
+    .main_nav-section > .button > .icon {
+        display: block;
+        height: 4vmin;
+        width: 4vmin;
+        padding: 1.5vmin;
+        position: relative;
+        z-index: 1;
+    }
+}

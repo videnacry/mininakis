@@ -20,3 +20,8 @@
     display: flex;
     position: relative;
 }
+@media screen and (max-width: 600px) {
+    .main-page > .left-bar {
+        height: 70%;
+    }
+}

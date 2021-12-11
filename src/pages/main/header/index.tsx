@@ -12,6 +12,7 @@ const Header = (props: headerProps) => {
             </div>
             <div className="menu">
                 <p className="text">Do you want to change the posts view?</p>
+                <p className="text">Change posts view?</p>
                 <button className="button" onClick={props.setImagesInCascade}>
                     <SquareSvg className="icon"/>
                 </button>

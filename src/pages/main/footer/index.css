@@ -42,3 +42,25 @@
         width: 18vw;
     }
 }
+@media screen and (max-width: 600px) {
+    .main_footer-section > .bar:first-child {
+        max-height: unset;
+        width: 2vmin;
+        height: 40vh;
+        left: 8%;
+        right: unset;
+        bottom: -1%;
+    }
+    .main_footer-section > .bar:nth-child(2) {
+        right: unset;
+        left: -1%;
+        bottom: 12%;
+    }
+    .main_footer-section > .bar:nth-child(3) {
+        height: 2vmin;
+        width: 25vw;
+        z-index: 1;
+        top: 16%;
+        bottom: unset;
+    }
+}

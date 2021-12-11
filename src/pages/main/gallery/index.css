@@ -88,3 +88,21 @@
         width: 20vw;
     }
 }
+@media screen and (max-width: 600px) {
+    .main_gallery-section {
+        height: 95%;
+        width: 100%;
+        margin-left: -2px;
+        justify-content: space-between;
+        left: 0;
+    }
+    .main_gallery-section > .images-column-unique {
+        margin-right: 0;
+    }
+    .main_gallery-section > .images-column-unique > .big-image {
+        width: 70vw;
+    }
+    .main_gallery-section > .images-column-third > .small-image {
+        width: 27vw;
+    }
+}

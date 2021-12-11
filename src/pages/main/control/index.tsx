@@ -1,3 +1,7 @@
+import {ReactComponent as FilterSvg} from './filter.svg'
+import {ReactComponent as LogSvg} from './log.svg'
+import {ReactComponent as UploadSvg} from './upload.svg'
+
 import './index.css'
 
 const Control = () => {
@@ -9,6 +13,9 @@ const Control = () => {
                 <button className="button">
                     <div className="filter"/>
                     <div className="text">Log out</div>
+                    <i className="icon">
+                        <LogSvg width="100%" height="100%" fill="#181818"/>
+                    </i>
                 </button>
             </div>
             <div className="bottom-half">
@@ -17,6 +24,9 @@ const Control = () => {
                     <button id="filter" className="button">
                         <div className="filter"/>
                         <div className="text">Filter</div>
+                        <i className="icon">
+                            <FilterSvg width="100%" height="100%" fill="#181818"/>
+                        </i>
                     </button>
                 </div>
                 <div className="button-labeled">
@@ -24,6 +34,9 @@ const Control = () => {
                     <button id="upload" className="button">
                         <div className="filter"/>
                         <div className="text">Upload</div>
+                        <i className="icon">
+                            <UploadSvg width="100%" height="100%" fill="#181818"/>
+                        </i>
                     </button>
                 </div>
             </div>

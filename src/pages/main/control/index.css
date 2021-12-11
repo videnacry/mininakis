@@ -75,3 +75,34 @@
         width: 15vw;
     }
 }
+.main_control-section > .top-half > .button > .icon, .main_control-section > .bottom-half > .button-labeled > .button > .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .main_control-section {
+        width: unset;
+        height: 50%;
+        top: 10%;
+    }
+    .main_control-section > .left-bar {
+        height: 90%;
+        left: 0;
+        bottom: -110%;
+        right: unset;
+    }
+    .main_control-section > .bottom-half > .button-labeled > .label {
+        display: none;
+    }
+    .main_control-section > .top-half > .button > .text, .main_control-section > .bottom-half > .button-labeled > .button > .text {
+        display: none;
+    }
+    .main_control-section > .top-half > .button > .icon, .main_control-section > .bottom-half > .button-labeled > .button > .icon {
+        display: block;
+        height: 4vmin;
+        width: 4vmin;
+        padding: 1.5vmin;
+        position: relative;
+        z-index: 1;
+    }
+}
