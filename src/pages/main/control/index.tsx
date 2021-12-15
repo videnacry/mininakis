@@ -4,15 +4,16 @@ import {ReactComponent as UploadSvg} from './upload.svg'
 
 import './index.css'
 
-const Control = () => {
+type propsControl = {goLogin: () => void}
+const Control = (props: propsControl) => {
     
     return(
         <aside className="main_control-section">
             <div className="left-bar"/>
             <div className="top-half">
-                <button className="button">
+                <button className="button" onClick={() => props.goLogin()}>
                     <div className="filter"/>
-                    <div className="text">Log out</div>
+                    <div className="text">Log in</div>
                     <i className="icon">
                         <LogSvg width="100%" height="100%" fill="#181818"/>
                     </i>

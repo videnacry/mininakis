@@ -1,0 +1,35 @@
+.login-page {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+}
+.login-page>.background-image {
+    height: 130%;
+    position: absolute;
+    left: 50%;
+    bottom: -20%;
+    z-index: 0;
+    transform: translate(-50%, 0%);
+    filter: opacity(0.62);
+}
+.login-page>.title {
+    margin-top: 10%;
+    position: relative;
+    z-index: 1;
+    font-size: 8em;
+    font-weight: 400;
+    color: white;
+    font-family: specialagent;
+    cursor: pointer;
+}
+@media screen and (min-width: 900px) {
+    .login-page>.background-image {
+        height: 150%;
+        bottom: -23%;
+    }
+}

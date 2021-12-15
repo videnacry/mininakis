@@ -9,6 +9,8 @@
     font-size: 3.5em;
     font-weight: 400;
     color: white;
+    font-family: specialagent;
+    cursor: pointer;
 }
 .main_header-section > .head > .bar {
     width: 50%;
@@ -64,7 +66,6 @@
     }
     .main_header-section > .head > .title {
         font-size: 2.5em;
-        font-weight: 600;
     }
     .main_header-section > .menu > .text:first-child {
         display: none;

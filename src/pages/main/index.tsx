@@ -9,7 +9,7 @@ import ImageType from '../../models/images/imageType'
 
 import './index.css'
 
-type mainProps = {images: ImageType[]}
+type mainProps = {images: ImageType[], goLogin: () => void, goMain: () => void}
 
 const Main = (props: mainProps) => {
     const [areImagesInGrid, setImagesInGrid] = useState(false)
@@ -18,11 +18,11 @@ const Main = (props: mainProps) => {
         <div className="main-page">
             <div className="left-bar"/>
             <div className="right-content">
-                <Header setImagesInGrid={() => setImagesInGrid(true)} setImagesInCascade={() => setImagesInGrid(false)}/>
+                <Header setImagesInGrid={() => setImagesInGrid(true)} setImagesInCascade={() => setImagesInGrid(false)} goMain={props.goMain}/>
                 <div className="main">
                     <Nav/>
                     <Gallery images={props.images} areImagesInGrid={areImagesInGrid}/>
-                    <Control/>
+                    <Control goLogin={props.goLogin}/>
                 </div>
                 <Footer areImagesInGrid={areImagesInGrid}/>
             </div>

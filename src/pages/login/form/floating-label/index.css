@@ -1,0 +1,27 @@
+.form_floating-label {
+    margin: 3vmin 6vmin;
+    display: flex;
+    align-items: flex-end;
+}
+.form_floating-label>.input {
+    width: 100%;
+    height: 3.4em;
+    margin-left: 2vmin;
+    border-bottom: solid 1px #5e5e5e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.form_floating-label>.input>label {
+    margin-left: 1vmin;
+    color: #606060;
+}
+.form_floating-label>.input>input {
+    font-family: roboto;
+    font-size: 1.3em;
+    color: #080808;
+}
+.form_floating-label>.input>input:focus-visible {
+    outline: none;
+}

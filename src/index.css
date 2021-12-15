@@ -1,9 +1,22 @@
+@font-face {
+  font-family: specialagent;
+  src: url(./font-families/specialagent.ttf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(./font-families/Roboto-Light.ttf)
+}
 * {
   margin: 0;
   padding: 0;
   border-radius: 2px;
   border: 0;
   background-color: unset;
+  outline: none;
+}
+#root {
+  overflow: hidden;
+  position: relative;
 }
 body {
   overflow: hidden;
