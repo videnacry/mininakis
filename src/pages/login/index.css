@@ -17,6 +17,9 @@
     transform: translate(-50%, 0%);
     filter: opacity(0.62);
 }
+.login-page>.background-image>img {
+    height: 100%;
+}
 .login-page>.title {
     margin-top: 10%;
     position: relative;
@@ -31,5 +34,69 @@
     .login-page>.background-image {
         height: 150%;
         bottom: -23%;
+    }
+}
+@media screen and (max-width: 770px) {
+    .login-page>.title {
+        font-size: 5em;
+    }
+}
+@media screen and (max-aspect-ratio: 768/1024) {
+    .login-page {
+        padding-top: 30%;
+        flex-wrap: wrap;
+    }
+    .login-page>.background-image {
+        width: 70%;
+        height: auto;
+        top: 0;
+        bottom: unset;
+    }
+    .login-page>.background-image>img {
+        height: auto;
+        width: 100%;
+    }
+    .login-page>.title {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 600px) {
+    .login-page {
+        padding-top: 40%;
+        flex-wrap: wrap;
+    }
+    .login-page>.background-image {
+        width: 105%;
+        height: auto;
+        top: 0;
+        left: 0;
+        transform: none;
+        bottom: unset;
+    }
+    .login-page>.background-image>img {
+        height: auto;
+        width: 100%;
+    }
+    .login-page>.title {
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 450px) {
+    @media screen and (min-height: 650px) {
+        .login-page {
+            padding-top: 50%;
+        }
+        .login-page>.title {
+            margin-bottom: -1em;
+        }
+    }
+    @media screen and (min-height: 800px) {
+        .login-page {
+            padding-top: 40%;
+        }
+        .login-page>.title {
+            margin-bottom: -4em;
+        }
     }
 }

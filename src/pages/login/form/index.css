@@ -67,3 +67,18 @@
 .login_form-section>.emails>.outlook {
     border-left: solid #a3a3a3 1px;
 }
+.login_form-section>.emails>.gmail>img, .login_form-section>.emails>.outlook>img  {
+    max-width: 35vmin;
+    width: 30%;
+    height: auto;
+}
+@media screen and (max-width: 600px) {
+    .login_form-section {
+        margin: 0 5vmin;
+    }
+}
+@media screen and (max-width: 400px) {
+    .login_form-section>.emails>.gmail, .login_form-section>.emails>.outlook {
+        width: 50%;
+    }
+}

@@ -19,10 +19,10 @@ const Form = () => {
             <button className="forgot-password">Forgot yout password?</button>
             <div className="emails">
                 <button className="gmail">
-                    <img src={gmailSrc} alt="gmail icon" width="40vmin"/>
+                    <img src={gmailSrc} alt="gmail icon"/>
                 </button>
                 <button className="outlook">
-                    <img src={outlookSrc} alt="outlook icon" width="40vmin"/>
+                    <img src={outlookSrc} alt="outlook icon"/>
                 </button>
             </div>
         </form>

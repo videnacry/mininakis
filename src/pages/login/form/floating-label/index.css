@@ -25,3 +25,8 @@
 .form_floating-label>.input>input:focus-visible {
     outline: none;
 }
+@media screen and (max-width: 300px) {
+    .form_floating-label {
+        margin: 3vmin 3vmin;
+    }
+}

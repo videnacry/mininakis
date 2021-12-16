@@ -9,7 +9,7 @@ const Login = (props: propsLogin) => {
     return(
         <div className="login-page">
             <div className="background-image">
-                <img src={backgroundSrc} alt="" height="100%"/>
+                <img src={backgroundSrc} alt=""/>
             </div>
             <h1 className="title" onClick={() => props.goMain()}>Mininakis</h1>
             <Form/>
