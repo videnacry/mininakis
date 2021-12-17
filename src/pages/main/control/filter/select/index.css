@@ -1,0 +1,31 @@
+.main_control-section>.filter>.select {
+    border-radius: .5vmin;
+    border: solid black 1px;
+    padding: 0 0.2em;
+    background-color: #D7FFFA;
+}
+.main_control-section>.filter>.select>.selected {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main_control-section>.filter>.select>.selected>button {
+    margin-right: 1vmin;
+    transform: rotate(270deg);
+    font-size: 1.2em;
+    font-weight: 1000;
+    color: #FF75E1;
+}
+.main_control-section>.filter>.select>.option {
+    width: 100%;
+    border-top: solid 1px black;
+    padding: 0.4em 0;
+    line-height: 1.8em;
+    font-size: .9em;
+    text-align: start;
+}
+.main_control-section>.filter>.select>.option.selected {
+    background-color: #FF75E1;
+    background-clip: content-box;
+}
