@@ -1,4 +1,8 @@
-import { useCallback, useMemo, useReducer, useRef, useState } from 'react'
+import './index.css'
+import { useCallback, useEffect, useMemo, useReducer, useState } from 'react'
+
+import ContextImages from './contextImages'
+
 import Header from './header'
 import Nav from './nav'
 import Gallery from './gallery'
@@ -6,34 +10,50 @@ import Control from './control'
 import Footer from './footer'
 
 import ImageType from '../../models/images/imageType'
-
-import './index.css'
+import getImagesSorted from './getImagesSorted'
 
 type mainProps = {images: ImageType[], goLogin: () => void, goMain: () => void}
+type typeImagesState = {images: ImageType[], sortedProperty: string, sortDirection: string}
+type typeImagesReducerAction = {type: 'sortProperty'|'sortDirection', value: 'name'|'date'|'default'|'upDirection'|'downDirection'|'mixedDirection'}
 const Main = (props: mainProps) => {
-
-    const imagesReducer = useCallback((state: {images: ImageType[], sortedProperty: string}, action: {sortProperty: 'name'|'date'|'default'}) => {
-        switch (action.sortProperty) {
-            case 'name': 
-                return {images: [...props.images.sort((a, b) => a.name > b.name ? 1 : a.name < b.name ? -1 : 0)], sortedProperty: action.sortProperty}
-            case 'date':
-                return {images: [...props.images.sort((a, b) => new Date(a.date) > new Date(b.date) ? 1 : new Date(a.date) < new Date(b.date) ? -1 : 0)], sortedProperty: action.sortProperty}
+    const imagesReducer = useCallback((state: typeImagesState, action: typeImagesReducerAction) => {
+        switch (action.type) {
+            case 'sortProperty': {
+                const isAscending = (state.sortDirection === 'upDirection') ? true : false
+                const isMixed = (state.sortDirection === 'mixedDirection') ? true : false
+                const sortProperty = (typeof action.value === 'string') ? action.value : ''
+                return {images: getImagesSorted(props.images, sortProperty, isAscending, isMixed), sortedProperty: sortProperty, sortDirection: state.sortDirection}
+            }
+            case 'sortDirection':{
+                const isAscending = (action.value === 'upDirection') ? true : false
+                const isMixed = (action.value === 'mixedDirection') ? true : false
+                return {images: getImagesSorted(props.images, state.sortedProperty, isAscending, isMixed), sortedProperty: state.sortedProperty, sortDirection: action.value}
+            }
             default:
-                return {images: [...props.images.sort((a, b) => a.src > b.src ? 1 : a.src < b.src ? -1 : 0)], sortedProperty: action.sortProperty}
+                return {images: props.images, sortedProperty: 'default', sortDirection: state.sortDirection}
         }
     }, [props.images])
-    const [imagesState, imagesDispatch] = useReducer(imagesReducer, {images: props.images, sortedProperty: 'default'})
+    const [imagesState, imagesDispatch] = useReducer(imagesReducer, {images: props.images, sortedProperty: 'default', sortDirection: 'upDirection'})
+
     const sortOptions = useMemo(() => {
         return {
             byProperty: [
-                {name: 'name', sortHandler: () => imagesDispatch({sortProperty: 'name'})},
-                {name: 'date', sortHandler: () => imagesDispatch({sortProperty: 'date'})},
-                {name: 'default', sortHandler: () => imagesDispatch({sortProperty: 'default'})}
+                {name: 'name', sortHandler: () => imagesDispatch({type: 'sortProperty', value: 'name'})},
+                {name: 'date', sortHandler: () => imagesDispatch({type: 'sortProperty', value: 'date'})}
+            ],
+            byDirection: [
+                {name: 'up', value: 'upDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'upDirection'})},
+                {name: 'down', value: 'downDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'downDirection'})},
+                {name: 'mix', value: 'mixedDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'mixedDirection'})}
             ]
         }
     }, [])
-
+    
     const [areImagesInGrid, setImagesInGrid] = useState(false)
+    
+    useEffect(() =>  {
+        imagesDispatch({type: 'sortProperty', value: 'name'})
+    },[props.images])
 
     return (
         <div className="main-page">
@@ -43,7 +63,9 @@ const Main = (props: mainProps) => {
                 <div className="main">
                     <Nav/>
                     <Gallery images={imagesState.images.length > 0 ? imagesState.images : props.images} areImagesInGrid={areImagesInGrid}/>
-                    <Control goLogin={props.goLogin} sortOptions={sortOptions} sortedProperty={imagesState.sortedProperty}/>
+                    <ContextImages.Provider value={{sortOptions, imagesState}}>
+                        <Control goLogin={props.goLogin} />
+                    </ContextImages.Provider>
                 </div>
                 <Footer areImagesInGrid={areImagesInGrid}/>
             </div>

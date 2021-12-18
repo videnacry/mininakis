@@ -8,7 +8,7 @@ import {ReactComponent as UploadSvg} from './upload.svg'
 
 import './index.css'
 
-type propsControl = {goLogin: () => void, sortOptions: {byProperty: {name: string, sortHandler: () => void}[]}, sortedProperty: string}
+type propsControl = {goLogin: () => void}
 const Control = (props: propsControl) => {
     const [isVisibleFilter, setIsVisibleFilter] = useState(false)
     const showFilter = useCallback(() => setIsVisibleFilter(true), [])
@@ -24,7 +24,7 @@ const Control = (props: propsControl) => {
                 <Button IconSvg={FilterSvg} text="Filter" labelText="Filter the posts?" clickHandler={showFilter}/>
                 <Button IconSvg={UploadSvg} text="Upload" labelText="Upload your fan art?" clickHandler={() => {}}/>
             </div>
-            {isVisibleFilter ? <Filter hideFilter={hideFilter} sortOptions={props.sortOptions} sortedProperty={props.sortedProperty}/> : ''}
+            {isVisibleFilter ? <Filter hideFilter={hideFilter}/> : ''}
         </aside>
     )
 }

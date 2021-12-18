@@ -53,6 +53,9 @@
     justify-content: space-between;
     align-items: center;
 }
+.main_control-section>.filter>.label_input-radio>label {
+    width: 100%;
+}
 .main_control-section>.filter>.label_input-radio>input[type=radio] {
     position: relative;
 }

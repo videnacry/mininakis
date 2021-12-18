@@ -1,11 +1,16 @@
-import {ReactComponent as SearchSvg} from './search.svg'
+import { useContext } from 'react'
+
+import ContextImages from '../../contextImages'
 
 import Select from './select'
+import {ReactComponent as SearchSvg} from './search.svg'
 
 import './index.css'
 
-type propsFilter = {hideFilter: () => void, sortOptions: {byProperty: {name: string, sortHandler: () => void}[]}, sortedProperty: string}
+type propsFilter = {hideFilter: () => void}
 const Filter = (props: propsFilter) => {
+    const contextImages = useContext(ContextImages)
+
     return(
         <div className="filter">
             <div className="filter-effect"/>
@@ -15,19 +20,15 @@ const Filter = (props: propsFilter) => {
                 <input type="text" id="search"/>
             </div>
             <h1 className="title">Sort by</h1>
-            <Select sortOptions={props.sortOptions} sortedProperty={props.sortedProperty}/>
-            <div className="label_input-radio">
-                <label htmlFor="up">
-                    Up
-                </label> 
-                <input type="radio" name="sort-direction" value="true" id="up"/>
-            </div>
-            <div className="label_input-radio">
-                <label htmlFor="down">
-                    Down
-                </label>
-                <input type="radio" name="sort-direction" value="false" id="down" checked/>
-            </div>
+            <Select sortedProperty={contextImages.imagesState.sortedProperty} sortOptions={contextImages.sortOptions}/>
+            {contextImages.sortOptions.byDirection.map((direction, index) => (
+                <div className="label_input-radio" key={direction.name + index}>
+                    <label htmlFor={direction.name}>
+                        {direction.name}
+                    </label> 
+                    <input type="radio" name="sort-direction" id={direction.name} onInput={direction.sortHandler} defaultChecked={contextImages.imagesState.sortDirection === direction.value ? true : false}/>
+                </div>
+            ))}
         </div>
     )
 }
