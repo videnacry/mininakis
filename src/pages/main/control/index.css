@@ -44,10 +44,10 @@
     .main_control-section {
         width: unset;
         height: 50%;
-        top: 10%;
+        top: 15%;
     }
     .main_control-section > .left-bar {
-        height: 90%;
+        height: 60%;
         left: 0;
         bottom: -110%;
         right: unset;

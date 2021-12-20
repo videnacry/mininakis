@@ -9,6 +9,12 @@ import Gallery from './gallery'
 import Control from './control'
 import Footer from './footer'
 
+import {ReactComponent as SvgCalendar} from './calendar-event.svg'
+import {ReactComponent as SvgUpArrow} from './arrow-up.svg'
+import {ReactComponent as SvgDownArrow} from './arrow-down.svg'
+import {ReactComponent as SvgMixArrow} from './arrow-down-up.svg'
+import {ReactComponent as SvgAZ} from './abc-svgrepo-com.svg'
+
 import ImageType from '../../models/images/imageType'
 import getImagesSorted from './getImagesSorted'
 
@@ -38,13 +44,13 @@ const Main = (props: mainProps) => {
     const sortOptions = useMemo(() => {
         return {
             byProperty: [
-                {name: 'name', sortHandler: () => imagesDispatch({type: 'sortProperty', value: 'name'})},
-                {name: 'date', sortHandler: () => imagesDispatch({type: 'sortProperty', value: 'date'})}
+                {name: 'name', sortHandler: () => imagesDispatch({type: 'sortProperty', value: 'name'}), icon: SvgAZ},
+                {name: 'date', sortHandler: () => imagesDispatch({type: 'sortProperty', value: 'date'}), icon: SvgCalendar}
             ],
             byDirection: [
-                {name: 'up', value: 'upDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'upDirection'})},
-                {name: 'down', value: 'downDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'downDirection'})},
-                {name: 'mix', value: 'mixedDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'mixedDirection'})}
+                {name: 'up', value: 'upDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'upDirection'}), icon: SvgUpArrow},
+                {name: 'down', value: 'downDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'downDirection'}), icon: SvgDownArrow},
+                {name: 'mix', value: 'mixedDirection', sortHandler: () => imagesDispatch({type: 'sortDirection', value: 'mixedDirection'}), icon: SvgMixArrow}
             ]
         }
     }, [])

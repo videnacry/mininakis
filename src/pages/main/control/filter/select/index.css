@@ -25,7 +25,33 @@
     font-size: .9em;
     text-align: start;
 }
+.main_control-section>.filter>.select>.option>.icon, .main_control-section>.filter>.select>.selected>label>.icon {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: none;
+}
 .main_control-section>.filter>.select>.option.selected {
     background-color: #FF75E1;
     background-clip: content-box;
+}
+@media screen and (max-width: 600px) {
+    .main_control-section>.filter>.select {
+        max-width: 2em;
+        margin: 25% auto;
+        padding: 0 2px;
+    }
+    .main_control-section>.filter>.select>.selected:not(.option) {
+        margin-bottom: -1vmin;
+        padding: 0;
+        padding-top: 0.5em;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .main_control-section>.filter>.select>.option>.text, .main_control-section>.filter>.select>.selected>label>.text {
+        display: none;
+    }
+    .main_control-section>.filter>.select>.option>.icon, .main_control-section>.filter>.select>.selected>label>.icon {
+        display: block;
+    }
 }

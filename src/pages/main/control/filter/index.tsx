@@ -19,12 +19,13 @@ const Filter = (props: propsFilter) => {
                 <label htmlFor="search"><SearchSvg/></label>
                 <input type="text" id="search"/>
             </div>
-            <h1 className="title">Sort by</h1>
-            <Select sortedProperty={contextImages.imagesState.sortedProperty} sortOptions={contextImages.sortOptions}/>
+            <h1 className="title">Sort<span className="extra-text">&nbsp;by</span></h1>
+            <Select/>
             {contextImages.sortOptions.byDirection.map((direction, index) => (
                 <div className="label_input-radio" key={direction.name + index}>
                     <label htmlFor={direction.name}>
-                        {direction.name}
+                        <span className="text">{direction.name}</span>
+                        <direction.icon className="icon"/>
                     </label> 
                     <input type="radio" name="sort-direction" id={direction.name} onInput={direction.sortHandler} defaultChecked={contextImages.imagesState.sortDirection === direction.value ? true : false}/>
                 </div>

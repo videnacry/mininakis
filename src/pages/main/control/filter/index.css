@@ -27,12 +27,12 @@
 }
 .main_control-section>.filter>.close {
     margin-left: auto;
-    margin-bottom: 1em;
+    margin-bottom: 2vh;
     display: block;
     font-size: 1.6em;
 }
 .main_control-section>.filter>.searcher {
-    margin-bottom: 2em;
+    margin-bottom: 3vh;
     border-bottom: solid 1px #5e5e5e;
     display: flex;
 }
@@ -53,8 +53,18 @@
     justify-content: space-between;
     align-items: center;
 }
-.main_control-section>.filter>.label_input-radio>label {
+.main_control-section>.filter>.label_input-radio>label>.text {
     width: 100%;
+}
+.main_control-section>.filter>.label_input-radio>label>.icon {
+    width: 50%;
+    height: 50%;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .main_control-section>.filter>.label_input-radio>input[type=radio] {
     position: relative;
@@ -92,5 +102,43 @@
 @media screen and (min-aspect-ratio: 1100/633) {
     .main_control-section>.filter {
         width: 119%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .main_control-section>.filter {
+        box-sizing: border-box;
+        width: 130%;
+        height: 145%;
+        padding: 0 2px;
+        left: -30%;
+    }
+    .main_control-section>.filter>.close {
+        font-size: 1.2em;
+    }
+    .main_control-section>.filter>.title {
+        padding: 0;
+        font-size: 1em;
+    }
+    .main_control-section>.filter>.title>.extra-text {
+        display: none;
+    }
+    .main_control-section>.filter>.label_input-radio {
+        justify-content: center;
+    }
+    .main_control-section>.filter>.label_input-radio>label>.text {
+        display: none;
+    }
+    .main_control-section>.filter>.label_input-radio>label>.icon {
+        display: block;
+    }
+    .main_control-section>.filter>.label_input-radio>input[type=radio], .main_control-section>.filter>.label_input-radio>input[type=radio]::after {
+        width: 1.6em;
+        height: 1.6em;
+    }
+}
+@media screen and (max-width: 300px) {
+    .main_control-section>.filter>.label_input-radio>input[type=radio], .main_control-section>.filter>.label_input-radio>input[type=radio]::after {
+        width: 1.2em;
+        height: 1.2em;
     }
 }

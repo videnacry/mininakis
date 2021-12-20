@@ -1,4 +1,6 @@
-import { createContext } from "react";
+import { createContext, FunctionComponent, SVGProps } from "react";
+
+import { ReactComponent as SvgLoading } from "./calendar-event.svg";
 
 const ContextImages = createContext({
     imagesState: {
@@ -7,10 +9,10 @@ const ContextImages = createContext({
         sortDirection: 'loading'
     }, sortOptions: {
         byProperty: [
-            {name: 'loading', sortHandler: () => {}}
+            {name: 'loading', sortHandler: () => {}, icon: SvgLoading}
         ],
         byDirection: [
-            {name: 'loading', value: 'loading', sortHandler: () => {}}
+            {name: 'loading', value: 'loading', sortHandler: () => {}, icon: SvgLoading}
         ]
     }
 })
