@@ -1,0 +1,30 @@
+.upload>.floating-label * {
+    cursor: pointer;
+}
+.upload>.floating-label {
+    margin-bottom: 4.2vh;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+.upload>.floating-label>.icon {
+    width: 1.2em;
+    height: auto;
+    margin-bottom: .4em;
+    fill: rgb(10, 10, 10);
+}
+.upload>.floating-label>.input {
+    width: 100%;
+    height: 3.4em;
+    margin-left: -1vmin;
+    padding-left: .8em;
+    border-bottom: solid 1px #5e5e5e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.upload>.floating-label>.input>label {
+    font-size: .8em;
+    color: #606060;
+}
