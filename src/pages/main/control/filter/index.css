@@ -91,17 +91,22 @@
 }
 @media screen and (min-aspect-ratio: 1280/800) {
     .main_control-section>.filter {
-        width: 113%;
+        width: 102%;
+        left: 0%;
     }
 }
 @media screen and (min-aspect-ratio: 1024/633) {
     .main_control-section>.filter {
-        width: 113%;
+        width: 90%;
+        padding: 0 2vmin;
+        left: 7%;
     }
 }
 @media screen and (min-aspect-ratio: 1100/633) {
     .main_control-section>.filter {
-        width: 119%;
+        width: 90%;
+        padding: 0 3vmin;
+        left: 8%;
     }
 }
 @media screen and (max-width: 600px) {

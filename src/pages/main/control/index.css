@@ -34,12 +34,16 @@
     flex-direction: column;
     justify-content: space-between;
 }
+@media screen and (min-width: 1000px) {
+    .main_control-section {
+        width: 18%;
+    }
+}
 @media screen and (max-width: 810px) {
     .main_control-section {
         width: 15vw;
     }
 }
-
 @media screen and (max-width: 600px) {
     .main_control-section {
         width: unset;
@@ -51,5 +55,15 @@
         left: 0;
         bottom: -110%;
         right: unset;
+    }
+}
+@media screen and (min-aspect-ratio: 1024/633) {
+    .main_control-section {
+        height: 90%;
+    }
+}
+@media screen and (min-aspect-ratio: 1100/633) {
+    .main_control-section {
+        height: 90%;
     }
 }

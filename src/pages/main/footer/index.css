@@ -64,3 +64,25 @@
         bottom: unset;
     }
 }
+@media screen and (min-aspect-ratio: 1024/633) {
+    .main_footer-section > .bar:first-child {
+        bottom: 2%;
+    }
+    .main_footer-section > .bar:nth-child(2) {
+        bottom: 8%;
+    }
+    .main_footer-section > .bar:nth-child(3) {
+        bottom: 1%;
+    }
+}
+@media screen and (min-aspect-ratio: 1100/633) {
+    .main_footer-section > .bar:first-child {
+        bottom: 2%;
+    }
+    .main_footer-section > .bar:nth-child(2) {
+        bottom: 8%;
+    }
+    .main_footer-section > .bar:nth-child(3) {
+        bottom: 1%;
+    }
+}

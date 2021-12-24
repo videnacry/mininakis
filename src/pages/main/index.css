@@ -25,3 +25,13 @@
         height: 70%;
     }
 }
+@media screen and (min-aspect-ratio: 1024/633) {
+    .main-page > .left-bar {
+        height: 90%;
+    }
+}
+@media screen and (min-aspect-ratio: 1100/633) {
+    .main-page > .left-bar {
+        height: 90%;
+    }
+}

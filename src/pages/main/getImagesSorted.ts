@@ -18,7 +18,7 @@ const sortImagesSorted = (pImages: ImageType[], pSortPropertyName: string, pIsAs
             sortedImagesMixDirection.push(sortedImages[index])
             sortedImagesMixDirection.push(image)
         })
-        if (isPairLength) sortedImagesMixDirection.push(sortedImages[sortedImages.length-1])
+        if (!isPairLength) sortedImagesMixDirection.push(sortedImages[sortedImages.length-1])
         return sortedImagesMixDirection
     }
     return sortedImages
