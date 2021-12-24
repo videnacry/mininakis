@@ -16,6 +16,7 @@
         linear-gradient(to right, rgba(47, 0, 255) , transparent 50%),
         linear-gradient(to top, rgba(242, 255, 0) , transparent 50%);
     background-color: rgb(73, 255, 237);
+    box-shadow: 0 0 0.5em black;
 }
 .main_control-section>.upload>.background-filter {
     width: 100%;
@@ -39,7 +40,6 @@
     border-radius: .3em;
     border: solid #b3b3b3 2px;
     position: relative;
-    left: 2.5%;
     bottom: 2vh;
     font-family: roboto;
     font-size: 1.2em;
@@ -59,14 +59,31 @@
 @media screen and (min-aspect-ratio: 1024/633) {
     .main_control-section>.upload {
         width: 90%;
-        padding: 0 2vmin;
         left: 7%;
     }
 }
 @media screen and (min-aspect-ratio: 1100/633) {
     .main_control-section>.upload {
         width: 90%;
-        padding: 0 3vmin;
         left: 8%;
+    }
+    .main_control-section>.upload>.close {
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .main_control-section>.upload {
+        width: 40vw;
+        height: 146%;
+        padding: 0 1.4vmin;
+        top: -4%;
+        left: unset;
+        right: 0;
+    }
+    .main_control-section>.upload>.close {
+        margin-bottom: 0;
+    }
+    .main_control-section>.upload>.upload {
+        font-size: 1em;
     }
 }

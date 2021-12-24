@@ -49,3 +49,13 @@
     height: 0;
     z-index: -1;
 }
+@media screen and (min-aspect-ratio: 1100/633) {
+    .main_control-section>.upload>.input-image {
+        margin-bottom: 1vh;
+    }
+}
+@media screen and (max-width: 600px) {
+    .main_control-section>.upload>.input-image {
+        margin-bottom: 1vh;
+    }
+}

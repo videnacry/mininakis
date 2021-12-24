@@ -7,7 +7,6 @@ const InputImage = () => {
         const fileReader = new FileReader()
         fileReader.onloadend = () => {
             if (typeof fileReader.result === 'string') setPreviewSrc(fileReader.result)
-            console.log(fileReader.result)
         }
         fileReader.readAsDataURL(imgFile)
     }, [])

@@ -2,6 +2,7 @@
     box-sizing: border-box;
     width: 110%;
     height: 100%;
+    border-radius: 2vmin;
     padding: 0 1vmin;
     position: absolute;
     z-index: 1;
@@ -12,13 +13,15 @@
         linear-gradient(to right, rgba(47, 0, 255) , transparent 50%),
         linear-gradient(to top, rgba(242, 255, 0) , transparent 50%);
     background-color: rgb(73, 255, 237);
+    box-shadow: 0 0 0.5em black;
 }
 .main_control-section>.filter>* {
     position: relative;
 }
-.main_control-section>.filter>.filter-effect {
+.main_control-section>.filter>.background-filter {
     width: 100%;
     height: 100%;
+    border-radius: 2vmin;
     position: absolute;
     z-index: 0;
     left: 0;
@@ -91,22 +94,20 @@
 }
 @media screen and (min-aspect-ratio: 1280/800) {
     .main_control-section>.filter {
-        width: 102%;
-        left: 0%;
+        width: 80%;
+        left: 12%;
     }
 }
 @media screen and (min-aspect-ratio: 1024/633) {
     .main_control-section>.filter {
         width: 90%;
-        padding: 0 2vmin;
         left: 7%;
     }
 }
 @media screen and (min-aspect-ratio: 1100/633) {
     .main_control-section>.filter {
-        width: 90%;
-        padding: 0 3vmin;
-        left: 8%;
+        width: 78%;
+        left: 14%;
     }
 }
 @media screen and (max-width: 600px) {
@@ -115,10 +116,11 @@
         width: 130%;
         height: 145%;
         padding: 0 2px;
+        top: -4%;
         left: -30%;
     }
     .main_control-section>.filter>.close {
-        font-size: 1.2em;
+        line-height: 1em;
     }
     .main_control-section>.filter>.title {
         padding: 0;

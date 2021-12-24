@@ -13,7 +13,7 @@ const Filter = (props: propsFilter) => {
 
     return(
         <div className="filter">
-            <div className="filter-effect"/>
+            <div className="background-filter"/>
             <button className="close" onClick={props.hideFilter}>&times;</button>
             <div className="searcher">
                 <label htmlFor="search"><SearchSvg/></label>
@@ -22,13 +22,13 @@ const Filter = (props: propsFilter) => {
             <h1 className="title">Sort<span className="extra-text">&nbsp;by</span></h1>
             <Select/>
             {contextImages.sortOptions.byDirection.map((direction, index) => (
-                <div className="label_input-radio" key={direction.name + index}>
+                <label htmlFor={direction.name} className="label_input-radio" key={direction.name + index}>
                     <label htmlFor={direction.name}>
                         <span className="text">{direction.name}</span>
                         <direction.icon className="icon"/>
                     </label> 
                     <input type="radio" name="sort-direction" id={direction.name} onInput={direction.sortHandler} defaultChecked={contextImages.imagesState.sortDirection === direction.value ? true : false}/>
-                </div>
+                </label>
             ))}
         </div>
     )

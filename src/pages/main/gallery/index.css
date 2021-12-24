@@ -90,7 +90,7 @@
 }
 @media screen and (max-width: 600px) {
     .main_gallery-section {
-        height: 95%;
+        height: 102%;
         width: 100%;
         margin-left: -2px;
         justify-content: space-between;

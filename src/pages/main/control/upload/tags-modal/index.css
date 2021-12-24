@@ -9,6 +9,7 @@
     linear-gradient(to right, rgba(47, 0, 255) , transparent 50%),
     linear-gradient(to top, rgba(242, 255, 0) , transparent 50%);
     background-color: rgb(73, 255, 237);
+    box-shadow: 0 0 0.5em black;
 }
 .upload>.tags-modal>.background-filter {
     width: 100%;
@@ -58,6 +59,7 @@
     line-height: 1.4;
     text-align: center;
     background-color: #D7FFFA;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.164);
 }
 @media screen and (min-aspect-ratio: 1024/633) {
     .upload>.tags-modal {
@@ -67,5 +69,15 @@
 @media screen and (min-aspect-ratio: 1100/633) {
     .upload>.tags-modal {
         right: 130%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .upload>.tags-modal {
+        width: 93.6vw;
+        right: 0;
+    }
+    .upload>.tags-modal>.title {
+        width: 100px;
+        font-size: 1.4em;
     }
 }
