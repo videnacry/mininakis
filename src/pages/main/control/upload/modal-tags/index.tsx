@@ -1,10 +1,10 @@
 import { Tag } from '../tags'
 import './index.css'
 
-type propsTagsModal = {closeClickHandler: () => void, tagSelected:Tag, tagClickHandler: (tagId:number) => void, tagSelectedClickHandler: () => void}
-const TagsModal = (props:propsTagsModal) => {
+type propsModalTags = {closeClickHandler: () => void, tagSelected:Tag, tagClickHandler: (tagId:number) => void, tagSelectedClickHandler: () => void}
+const ModalTags = (props:propsModalTags) => {
     return(
-        <div className="tags-modal">
+        <div className="modal-tags">
             <div className="background-filter"/>
             <div className="header">
                 <p className="title">Select a tag</p>
@@ -28,4 +28,4 @@ const TagsModal = (props:propsTagsModal) => {
     )
 }
 
-export default TagsModal
+export default ModalTags

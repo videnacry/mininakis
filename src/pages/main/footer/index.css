@@ -22,7 +22,7 @@
     width: 25vw;
 }
 .main_footer-section > .bar:nth-child(2).short {
-    width: 20vw;
+    width: 30vw;
 }
 .main_footer-section > .bar:nth-child(3) {
     max-height: 2em;

@@ -82,6 +82,7 @@
     }
     .main_control-section>.upload>.close {
         margin-bottom: 0;
+        line-height: .5em;
     }
     .main_control-section>.upload>.upload {
         font-size: 1em;

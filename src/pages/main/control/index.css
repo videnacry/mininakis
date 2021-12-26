@@ -41,7 +41,7 @@
 }
 @media screen and (max-width: 810px) {
     .main_control-section {
-        width: 15vw;
+        width: 16vw;
     }
 }
 @media screen and (max-width: 600px) {
@@ -65,5 +65,20 @@
 @media screen and (min-aspect-ratio: 1100/633) {
     .main_control-section {
         height: 90%;
+    }
+}
+@media screen and (min-aspect-ratio: 768/1024) and (orientation: portrait){
+    .main_control-section {
+        width: 24%;
+    }
+}
+@media screen and (min-aspect-ratio: 1024/1366) and (orientation: portrait){
+    .main_control-section {
+        width: 26%;
+        height: 60%;
+    }
+    .main_control-section > .left-bar {
+        height: 100%;
+        top: 50%;
     }
 }

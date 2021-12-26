@@ -14,6 +14,8 @@
     fill: rgb(10, 10, 10);
 }
 .upload>.floating-label>.input {
+    overflow-y: auto;
+    overflow-x: hidden;
     width: 100%;
     height: 3.4em;
     margin-left: -1vmin;
@@ -28,8 +30,34 @@
     font-size: .8em;
     color: #606060;
 
-}@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 900px) {
+    .upload>.floating-label>.icon {
+        display: none;
+    }
+}
+    
+@media screen and (max-width: 600px) {
     .upload>.floating-label {
         margin-bottom: 3vh;
     }
+    .upload>.floating-label>.icon {
+        display: unset;
+    }
+}
+@media screen and (max-width: 370px) {
+    .upload>.floating-label>.icon {
+        display: none;
+    }
+}
+::-webkit-scrollbar {
+    width: 1.4vmin;
+    border-radius: .4vmin;
+    background-color: #606060;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: .4vmin;
+    border: solid .4vmin #606060;
+    border-top: solid .6vmin #606060;
+    background-color: #ff9fea;
 }

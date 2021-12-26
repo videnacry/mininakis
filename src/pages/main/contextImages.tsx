@@ -1,4 +1,4 @@
-import { createContext, FunctionComponent, SVGProps } from "react";
+import { createContext } from "react";
 
 import { ReactComponent as SvgLoading } from "./calendar-event.svg";
 
