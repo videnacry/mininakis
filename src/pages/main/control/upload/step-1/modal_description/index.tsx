@@ -1,4 +1,3 @@
-import { ChangeEventHandler, DetailedHTMLProps, TextareaHTMLAttributes } from 'react'
 import './index.css'
 
 type typePropsModalDescription = {closeClickHandler:() => void, inputChangeHandler:(e:{currentTarget:{value:string}}) => void, descriptionText:string}

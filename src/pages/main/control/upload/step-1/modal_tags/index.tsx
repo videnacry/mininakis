@@ -1,4 +1,4 @@
-import { Tag } from '../tags'
+import { Tag } from '../../tags'
 import './index.css'
 
 type propsModalTags = {closeClickHandler: () => void, tagSelected:Tag, tagClickHandler: (tagId:number) => void, tagSelectedClickHandler: () => void}

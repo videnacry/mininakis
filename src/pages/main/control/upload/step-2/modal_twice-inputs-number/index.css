@@ -1,0 +1,31 @@
+.upload>.modal {
+    margin-bottom: 4.2vh;
+    position: relative;
+    height: 3.4em;
+}
+.upload>.modal>.input {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.upload>.modal>.input>input, .upload>.modal>.input>label {
+    width: 50%;
+}
+.upload>.modal>.input>input {
+    margin: .3em 0;
+    text-align: center;
+    background-color: white;
+}
+.upload>.modal>.close {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    font-size: .8em;
+    font-weight: bold;
+}
+@media screen and (max-width: 600px) {
+    .upload>.modal {
+        margin-bottom: 3vh;
+    }
+}

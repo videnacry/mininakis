@@ -1,0 +1,16 @@
+.main_control-section>.upload>.upload {
+    width: 100%;
+    padding: 1vmin 0;
+    border-radius: .3em;
+    border: solid #b3b3b3 2px;
+    position: relative;
+    bottom: 2vh;
+    font-family: roboto;
+    font-size: 1.2em;
+    background-color: #D7FFFA;
+}
+@media screen and (max-width: 600px) {
+    .main_control-section>.upload>.upload {
+        font-size: 1em;
+    }
+}
