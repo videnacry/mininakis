@@ -1,10 +1,11 @@
 import './index.css'
 
 type typePropsInput = {labelText:string, value:number, changeHandler:(e:{currentTarget:{value:string}})=>void}
-type typePropsModalTags = {closeClickHandler: () => void, inputsProps: [typePropsInput, typePropsInput]}
+type typePropsModalTags = {message:string, closeClickHandler: () => void, inputsProps: [typePropsInput, typePropsInput]}
 const ModalTwiceInputsNumber = (props:typePropsModalTags) => {
     return(
-        <div className="modal">
+        <div className="modal-twice-inputs-number">
+            <p className="message">{props.message}</p>
             <button className="close" onClick={props.closeClickHandler}>&#10006;</button>
             <div className="input">
                 {props.inputsProps.map((inputProp, index) => (

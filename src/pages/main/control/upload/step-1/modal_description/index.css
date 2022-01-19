@@ -8,6 +8,12 @@
     height: 100%;
     background-color: white;
 }
+.upload>.modal-description>.message {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    font-size: .8em;
+}
 .upload>.modal-description>.accept {
     position: absolute;
     right: 0;
@@ -15,8 +21,71 @@
     font-size: .8em;
     font-weight: bold;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px), (orientation: landscape) {
     .upload>.modal-description {
+        position: absolute;
+        z-index: 3;
+        top: -10%;
+        right: 5vw;
+        width: 71vw;
+        height: 60%;
         margin-bottom: 3vh;
+        border-radius: 4px;
+        padding: 8vw 6vw 4vw 6vw;
+        background-image: linear-gradient(to left, rgba(0, 255, 30),transparent 50%), linear-gradient(to right, rgba(47, 0, 255) , transparent 50%), linear-gradient(to top, rgba(242, 255, 0) , transparent 50%);
+        background-color: rgb(73, 255, 237);
+        box-shadow: 0 0 0.5em black;
+    }
+    .upload>.modal-description:before {
+        content: '';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .upload>.modal-description:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 6px;
+        opacity: .6;
+        background-color: white;
+    }
+    .upload>.modal-description>.message {
+        position: absolute;
+        z-index: 1;
+        top: 1vmin;
+        bottom: unset;
+        left: 2vmin;
+    }
+    .upload>.modal-description>.accept {
+        position: absolute;
+        z-index: 1;
+        bottom: unset;
+        top: 1vmin;
+        right: 2vmin;
+        font-size: .8em;
+        font-weight: bold;
+    }
+    .upload>.modal-description>.input {
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+        padding: 2vmin;
+        font-size: 1.2em;
+    }
+    @media screen and (orientation: landscape) {
+        .upload>.modal-description {
+            top: -30%;
+            height: 40%;
+            width: 75vw;
+            padding: 6vw 4vw 2vw 4vw;
+        }
     }
 }

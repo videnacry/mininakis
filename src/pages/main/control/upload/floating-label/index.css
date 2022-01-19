@@ -44,6 +44,9 @@
     .upload>.floating-label>.icon {
         display: unset;
     }
+    .upload>.floating-label>.input {
+        font-size: .8em;
+    }
 }
 @media screen and (max-width: 370px) {
     .upload>.floating-label>.icon {

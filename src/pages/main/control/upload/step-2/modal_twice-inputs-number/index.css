@@ -1,31 +1,103 @@
-.upload>.modal {
+.upload>.modal-twice-inputs-number {
     margin-bottom: 4.2vh;
     position: relative;
     height: 3.4em;
 }
-.upload>.modal>.input {
+.upload>.modal-twice-inputs-number>.input {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
-.upload>.modal>.input>input, .upload>.modal>.input>label {
+.upload>.modal-twice-inputs-number>.input>input, .upload>.modal-twice-inputs-number>.input>label {
     width: 50%;
 }
-.upload>.modal>.input>input {
+.upload>.modal-twice-inputs-number>.input>input {
     margin: .3em 0;
     text-align: center;
     background-color: white;
 }
-.upload>.modal>.close {
+.upload>.modal-twice-inputs-number>.message {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    font-size: .8em;
+}
+.upload>.modal-twice-inputs-number>.close {
     position: absolute;
     right: 0;
     bottom: 100%;
     font-size: .8em;
     font-weight: bold;
 }
-@media screen and (max-width: 600px) {
-    .upload>.modal {
+@media screen and (max-width: 600px), (orientation: landscape) {
+    .upload>.modal-twice-inputs-number {
+        position: absolute;
+        z-index: 3;
+        top: -10%;
+        right: 5vw;
+        width: 71vw;
+        height: 40%;
         margin-bottom: 3vh;
+        border-radius: 4px;
+        padding: 4vw 6vw 4vw 6vw;
+        background-image: linear-gradient(to left, rgba(0, 255, 30),transparent 50%), linear-gradient(to right, rgba(47, 0, 255) , transparent 50%), linear-gradient(to top, rgba(242, 255, 0) , transparent 50%);
+        background-color: rgb(73, 255, 237);
+        box-shadow: 0 0 0.5em black;
+    }
+    .upload>.modal-twice-inputs-number:before {
+        content: '';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .upload>.modal-twice-inputs-number:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 6px;
+        opacity: .6;
+        background-color: white;
+    }
+    .upload>.modal-twice-inputs-number>.message {
+        position: relative;
+        z-index: 1;
+        left: unset;
+        bottom: unset;
+    }
+    .upload>.modal-twice-inputs-number>.close {
+        position: absolute;
+        z-index: 1;
+        bottom: unset;
+        top: 1vmin;
+        right: 2vmin;
+        font-size: .8em;
+        font-weight: bold;
+    }
+    .upload>.modal-twice-inputs-number>.input {
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+        padding: 2vmin;
+        font-size: 1.1em;
+    }
+    .upload>.modal-twice-inputs-number>.input>input {
+        font-size: .9em;
+        box-sizing: border-box;
+        padding: 1vmin;
+    }
+    @media screen and (orientation: landscape) {
+        .upload>.modal-twice-inputs-number {
+            top: -30%;
+            height: 45%;
+        }
     }
 }
