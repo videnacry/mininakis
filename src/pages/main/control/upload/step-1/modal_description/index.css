@@ -21,7 +21,7 @@
     font-size: .8em;
     font-weight: bold;
 }
-@media screen and (max-width: 600px), (orientation: landscape) {
+@media screen and (max-width: 600px) and (orientation: landscape) {
     .upload>.modal-description {
         position: absolute;
         z-index: 3;

@@ -31,7 +31,7 @@
     font-size: .8em;
     font-weight: bold;
 }
-@media screen and (max-width: 600px), (orientation: landscape) {
+@media screen and (max-width: 600px) and (orientation: landscape) {
     .upload>.modal-twice-inputs-number {
         position: absolute;
         z-index: 3;
