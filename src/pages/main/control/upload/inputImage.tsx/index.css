@@ -5,7 +5,7 @@
     width: 100%;
     margin-bottom: 3vh;
     border-radius: .5vmin;
-    border: .2vmin solid black;
+    border: .2vmin solid rgb(136, 136, 136);
     padding-top: 95%;
     position: relative;
     background-color: #D7FFFA;

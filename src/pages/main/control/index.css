@@ -1,13 +1,14 @@
 .main_control-section {
-    width: fit-content;
-    height: 80%;
-    margin-right: 3vw;
     position: absolute;
+    z-index: 1;
     top: 0;
     right: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: fit-content;
+    height: 80%;
+    margin-right: 3vw;
 }
 .main_control-section * {
     color: #001740;
@@ -34,29 +35,6 @@
     flex-direction: column;
     justify-content: space-between;
 }
-@media screen and (min-width: 1000px) {
-    .main_control-section {
-        width: 18%;
-    }
-}
-@media screen and (max-width: 810px) {
-    .main_control-section {
-        width: 16vw;
-    }
-}
-@media screen and (max-width: 600px) {
-    .main_control-section {
-        width: unset;
-        height: 50%;
-        top: 15%;
-    }
-    .main_control-section > .left-bar {
-        height: 60%;
-        left: 0;
-        bottom: -110%;
-        right: unset;
-    }
-}
 @media screen and (min-aspect-ratio: 1024/633) {
     .main_control-section {
         height: 90%;
@@ -67,11 +45,6 @@
         height: 90%;
     }
 }
-@media screen and (min-aspect-ratio: 768/1024) and (orientation: portrait){
-    .main_control-section {
-        width: 24%;
-    }
-}
 @media screen and (min-aspect-ratio: 1024/1366) and (orientation: portrait){
     .main_control-section {
         width: 26%;
@@ -80,5 +53,38 @@
     .main_control-section > .left-bar {
         height: 100%;
         top: 50%;
+    }
+}
+@media screen and (min-aspect-ratio: 768/1024) and (orientation: portrait){
+    .main_control-section {
+        width: 24%;
+    }
+}
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+    .main_control-section {
+        width: 18%;
+    }
+}
+@media screen and (max-width: 760px) {
+    .main_control-section {
+        width: 16vw;
+    }
+}
+@media screen and (max-width: 540px) {
+    .main_control-section {
+        top: 15%;
+    }
+}
+@media screen and (max-width: 520px) {
+    .main_control-section {
+        width: unset;
+        height: 50%;
+        top: 15%;
+    }
+    .main_control-section > .left-bar {
+        height: 60%;
+        left: 0;
+        bottom: -110%;
+        right: unset;
     }
 }

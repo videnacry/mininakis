@@ -1,6 +1,7 @@
 .main_control-section>.filter {
     box-sizing: border-box;
     width: 110%;
+    min-height: 360px;
     height: 100%;
     border-radius: 2vmin;
     padding: 0 1vmin;
@@ -89,7 +90,12 @@
 }
 @media screen and (aspect-ratio: 1024/1366) {
     .main_control-section>.filter {
-        width: 104%;
+        width: 105%;
+    }
+}
+@media screen and (aspect-ratio: 768/1024) {
+    .main_control-section>.filter {
+        width: 106%;
     }
 }
 @media screen and (min-aspect-ratio: 1280/800) {
@@ -110,7 +116,7 @@
         left: 14%;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 520px) {
     .main_control-section>.filter {
         box-sizing: border-box;
         width: 130%;

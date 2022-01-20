@@ -35,7 +35,7 @@
     background-color: #FF75E1;
     background-clip: content-box;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 520px) {
     .main_control-section>.filter>.select {
         max-width: 2em;
         margin: 25% auto;

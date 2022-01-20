@@ -1,8 +1,8 @@
 .main_nav-section {
-    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: fit-content;
 }
 .main_nav-section > .button {
     margin: 0.5vw 0;
