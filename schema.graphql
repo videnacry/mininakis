@@ -1,0 +1,119 @@
+"""Exposes a URL that specifies the behavior of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behavior of this scalar."""
+  url: String!
+) on SCALAR
+
+type Comment {
+  _id: String
+  product: String
+  comment: String
+  owner: String
+  createdAt: String
+}
+
+type CommentConnection {
+  edges: [CommentEdge]
+  pageInfo: PageInfo!
+}
+
+type CommentEdge {
+  node: Comment
+  cursor: Cursor
+}
+
+type Cursor {
+  _id: String
+  createdAt: String
+}
+
+type PageInfo {
+  hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: Cursor
+  endCursor: Cursor
+}
+
+type Product {
+  _id: String
+  title: String
+  description: String
+  price: Int
+  type: String
+  file_path: String
+  img_path: String
+  createdAt: String
+}
+
+type ProductConnection {
+  edges: [ProductEdge]
+  pageInfo: PageInfo!
+}
+
+type ProductEdge {
+  node: Product
+  cursor: Cursor
+}
+
+type Query {
+  products(pId: String, pCreatedAt: String, pFirst: Int, pLast: Int, pAfter: Int, pBefore: Int): ProductConnection
+  product(pId: String): Product
+  comments(pId: String, pCreatedAt: String, pProduct: String, pFirst: Int, pLast: Int, pAfter: Int, pBefore: Int): CommentConnection
+  users(pId: String, pCreatedAt: String, pFirst: Int, pLast: Int, pAfter: Int, pBefore: Int): UserConnection
+  user(pId: String): User
+  spaceships(pId: String, pCreatedAt: String, pFirst: Int, pLast: Int, pAfter: Int, pBefore: Int): SpaceshipConnection
+  spaceship(pOwner: String, pId: String): Spaceship
+}
+
+type Spaceship {
+  _id: String
+  config: SpaceshipConfig
+  name: String
+  goal: String
+  goal_explanation: String
+  goal_reason: String
+  owner: String
+  createdAt: String
+}
+
+type SpaceshipConfig {
+  fuselage: String
+  propulsionEngine: String
+  takeoff: String
+}
+
+type SpaceshipConnection {
+  edges: [SpaceshipEdge]
+  pageInfo: PageInfo!
+}
+
+type SpaceshipEdge {
+  node: Spaceship
+  cursor: Cursor
+}
+
+type User {
+  _id: String
+  img_path: String
+  cart: [String]
+  items: [String]
+  points: Int
+  username: String
+  name: String
+  lastname: String
+  email: String
+  password: String
+  description: String
+  createdAt: String
+}
+
+type UserConnection {
+  edges: [UserEdge]
+  pageInfo: PageInfo!
+}
+
+type UserEdge {
+  node: User
+  cursor: Cursor
+}
+

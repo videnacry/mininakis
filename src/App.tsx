@@ -1,4 +1,13 @@
-import {useCallback, useEffect, useReducer, useState} from 'react';
+import {useCallback, useEffect, useReducer, useState, Suspense} from 'react';
+
+import {
+  useFragment,
+  usePreloadedQuery,
+} from 'react-relay/hooks';
+import { Products } from './products';
+import { queryQuery } from './query';
+
+
 import Gallery from './pages/main'
 import Login from './pages/login';
 import getConfig from './config';
@@ -20,8 +29,14 @@ const pageReducer = (state: pageType|any , action: {type: 'navigate', value: 'ga
       return state
   }
 }
-function App () {
+
+function App (props:any) {
   
+  const data:any = usePreloadedQuery(queryQuery, props.preloadedQuery);
+  console.log(data)
+  const product = useFragment(Products, data?.products?.edges[10]?.node)
+  console.log(product)
+
   const [pageState, pageDispatch] = useReducer(pageReducer, pageInitial)
   const [images, setImages] = useState(imagesInitial)
 
@@ -37,15 +52,16 @@ function App () {
     }
   }, [])
   
+  
   return (
-    <>
-      <img className="background-image-left" src={backgroundImageSrc} alt="background"/>
-      <img className="background-image-right" src={backgroundImageSrc} alt="background"/>
-      { 
-        pageState.pageName === 'gallery' ? <Gallery images={images} goLogin={goLogin} goMain={goGallery}/> :
-        pageState.pageName === 'login' ? <Login goMain={goGallery}/> : ''
-      }
-    </>
+      <Suspense fallback={'Loading...'}>
+        <img className="background-image-left" src={backgroundImageSrc} alt="background"/>
+        <img className="background-image-right" src={backgroundImageSrc} alt="background"/>
+        { 
+          pageState.pageName === 'gallery' ? <Gallery images={images} goLogin={goLogin} goMain={goGallery}/> :
+          pageState.pageName === 'login' ? <Login goMain={goGallery}/> : ''
+        }
+    </Suspense>
   );
 }
 
