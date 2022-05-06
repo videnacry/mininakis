@@ -1,17 +1,16 @@
-import ImageType from '../../models/images/imageType'
-import imageDatabase from './database'
+import ImageType from './imageType'
 
-async function getImages () {
+async function getImagesWithBlobSrc (pImages:ImageType[]):Promise<ImageType[]> {
     const images: ImageType[] = []
     const imagesResponse = await Promise.allSettled(
-        imageDatabase.map(image => fetch(image.src))
+        pImages.map(image => fetch(image.src))
     )
     const imagesBlobPromises = getPropertiesOfPromiseSettledResultArray(imagesResponse, 'value')
     const imagesBlobResponse = await Promise.allSettled(imagesBlobPromises)
     const imagesBlob = getPropertiesOfPromiseSettledResultArray(imagesBlobResponse, 'value')
     imagesBlob.forEach((imageBlob, index) => {
         const imageLoadedSrc = imageBlob.url
-        const image = new ImageType(imageLoadedSrc, imageDatabase[index].name, imageDatabase[index].date)
+        const image:ImageType = {src:imageLoadedSrc, name:pImages[index].name, date:pImages[index].date}
         images.push(image)
     })
     return images
@@ -27,4 +26,4 @@ function getPropertiesOfPromiseSettledResultArray (promiseSettledResultArray: Pr
     return propertiesOfPromiseSettledResultArray
 }
 
-export default getImages
+export default getImagesWithBlobSrc

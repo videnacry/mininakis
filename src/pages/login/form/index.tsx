@@ -1,31 +1,20 @@
-import FloatingLabel from './floating-label'
-
-import {ReactComponent as EmailSvg} from './email.svg'
-import {ReactComponent as PasswordSvg} from './password.svg'
-import gmailSrc from './gmail.png'
-import outlookSrc from './outlook.png'
-
-import './index.css'
+import { useReducer, useState, useCallback } from "react"
+import SignIn from "./signin"
+import SignUp from "./signup"
 
 const Form = () => {
-    
+    const [formName, setFormName] = useState('sign in')
+    const goSignIn = useCallback(() => setFormName('sign in'), [])
+    const goSignUp = useCallback(() => setFormName('sign up'), [])
+    const getForm = useCallback(() => {
+        switch (formName) {
+            case 'sign in' : return <SignIn goSignUp={goSignUp}/>
+            case 'sign up' : return <SignUp goSignIn={goSignIn}/>
+            default : return <SignIn goSignUp={goSignUp}/>
+        }
+    }, [formName])
     return(
-        <form className="login_form-section" onSubmit={(e) => e.preventDefault()}>
-            <div className="filter"/>
-            <button className="register">Register</button>
-            <FloatingLabel iconSvg={<EmailSvg fill="#080808" width="1.8em" height="1.8em"/>} name="email" type="email"/>
-            <FloatingLabel iconSvg={<PasswordSvg fill="#080808" width="1.8em" height="1.8em"/>} name="password" type="password"/>
-            <button className="signin">Sign in</button>
-            <button className="forgot-password">Forgot yout password?</button>
-            <div className="emails">
-                <button className="gmail">
-                    <img src={gmailSrc} alt="gmail icon"/>
-                </button>
-                <button className="outlook">
-                    <img src={outlookSrc} alt="outlook icon"/>
-                </button>
-            </div>
-        </form>
+        getForm()
     )
 }
 

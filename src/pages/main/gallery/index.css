@@ -43,8 +43,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    background-color: beige;
 }
 .main_gallery-section > .images-column-unique > .big-image {
     width: 40vw;
@@ -144,10 +146,11 @@
         margin-right: 0;
     }
     .main_gallery-section > .images-column-third:nth-child(3) {
-        margin-right: unset;
+        margin-right: 2vw;
     }
     .main_gallery-section > .images-column-unique > .big-image {
         width: 70vw;
+        margin-right: 5vw;
     }
     .main_gallery-section > .images-column-third > .small-image {
         width: 27vw;
